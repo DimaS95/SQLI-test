@@ -9,7 +9,7 @@ $db = '';
 $mysqli = mysqli_connect("localhost", "root", "", "simpleapp");
 
 if($_GET['id']) {
-	$id = (int)$_GET['id'];
+	$id = $_GET['id'];// add (int) to filter input data and protect yourself from SQL-injections
 	$news = mysqli_query($mysqli, "SELECT * FROM `news` WHERE `id`=$id");
 } 
 else {
